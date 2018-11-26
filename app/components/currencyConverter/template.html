@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <br>
+        <div class="col-md-offset-4 col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Currency Converter</div>
+                <div class="panel-body">
+                    <form name="currencyForm" ng-submit="currencyConverter.convert(currencyForm)" novalidate>
+                        <div class="form-group">
+                            <div class="form-input col-md-12">
+                                <label for="convert-from">Convert from</label>
+                                <select id="convert-from" ng-model="currencyConverter.currency_from" ng-options="key as key for (key,value) in currencyConverter.currencies" class="form-control"></select>
+                            </div>
+                            <div class="form-input col-md-12">
+                                <label for="convert-to">Convert to</label>
+                                <select id="convert-to" ng-model="currencyConverter.currency_to" ng-options="key as key for (key,value) in currencyConverter.currencies" class="form-control"></select>
+                            </div>
+                            <div class="form-input col-md-12">
+                                <label for="amount">Amount</label>
+                                <input name="amount" id="amount" placeholder="amount" type="number" ng-model="currencyConverter.amount" required class="form-control">
+                                <p ng-show="currencyForm.amount.$error.required && currencyForm.$submitted" class="error-block">Please enter amount.</p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br>
+                        <div class="col-md-offset-2 col-md-8">
+                            <button class="btn btn-primary form-control">Convert</button>
+                        </div>
+                    </form>
+
+                    <div class="clearfix"></div>
+                    <div class="col-md-offset-2 col-md-8" ng-if="currencyConverter.result">
+                        <p class="text-success text-center">{{currencyConverter.result}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
