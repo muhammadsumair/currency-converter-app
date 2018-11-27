@@ -7,7 +7,7 @@ describe('Component: currencyConverter', () => {
         angular.mock.module('currencyConverterApp');
     });
 
-    beforeEach(inject(function($rootScope, $componentController){
+    beforeEach(inject(($rootScope, $componentController) =>{
         scope = $rootScope.$new();
         controller = $componentController('currencyConverter', {$scope: scope});
     }));
@@ -29,12 +29,5 @@ describe('Component: currencyConverter', () => {
     it('makeDecimalRound should make Decimal to Round', function() {
         expect(controller.makeDecimalRound(100.5555)).toBe(100.56);
     });
-
-    // it('convert should convert amount to rate', function() {
-    //     controller.getCurrencies();
-    //     controller.convert({$valid: true});
-    //     expect(mockedDataService.getAllIceCream).toHaveBeenCalled();
-    //     console.log(controller.currencies);
-    // });
 
 });

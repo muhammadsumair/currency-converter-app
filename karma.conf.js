@@ -9,7 +9,6 @@ module.exports = function(config) {
           'test/*.spec.js'
       ],
       exclude: [
-          'app/lib/**/*.js'
       ],
       preprocessors: {
       },
