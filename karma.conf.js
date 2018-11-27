@@ -3,16 +3,20 @@ module.exports = function(config) {
       basePath: '',
       frameworks: ['jasmine'],
       files: [
-          'lib/angular/angular.js',
-          'lib/angular-mocks/angular-mocks.js',
+          'app/lib/angular/angular.js',
+          'app/lib/angular-mocks/angular-mocks.js',
           'app/**/*.js',
           'test/*.spec.js'
       ],
       exclude: [
+          'app/lib/**/*.js'
       ],
       preprocessors: {
       },
-      reporters: ['progress', 'coverage'],
+      reporters: ['progress'],
+      plugins: [
+          'karma-jasmine'
+      ],
       port: 9876,
       colors: true,
       logLevel: config.LOG_INFO,

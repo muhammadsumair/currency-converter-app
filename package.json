@@ -2,18 +2,20 @@
   "name": "currency-converter-app",
   "version": "1.0.0",
   "description": "This is currency converter app.",
-  "main": "karma.conf.js",
+  "repository": "https://github.com/muhammadsumair/currency-converter-app",
   "directories": {
-    "lib": "lib",
+    "app": "app",
     "test": "test"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.11.1",
     "karma": "^3.1.1",
     "karma-jasmine": "^2.0.1"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "karma start"
+    "start": "http-server -a localhost -p 8000 -c-1 ./app",
+    "test": "karma start karma.conf.js"
   },
   "author": "",
   "license": "ISC"
